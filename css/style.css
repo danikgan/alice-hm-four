@@ -1,0 +1,95 @@
+:root {
+  --cursorX: 0px;
+  --cursorY: 0px;
+}
+
+a {
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.dot {
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+	position: absolute;
+	z-index: -1;
+  display: none;
+	top: var(--cursorY);
+	left: var(--cursorX);
+}
+
+
+/********** Animation for the below heading **********/
+@-webkit-keyframes fadeIn {
+	from { font-size: 0; } 
+	to { font-size: inherit; }
+}
+@keyframes fadeIn {
+	from { font-size: 0; }
+	to { font-size: inherit; }
+}
+
+@-webkit-keyframes fadeOut {
+	from { font-size: inherit; } 
+	to { font-size: 0; }
+}
+@keyframes fadeOut {
+	from { font-size: inherit; } 
+	to { font-size: 0; }
+}
+
+.inner-heading-below {
+  transform: scale(-1, -1);
+	-webkit-animation: fadeOut 1s;
+	animation: fadeOut 1s;
+	font-size: 0; 
+}
+
+.below-font-color {
+	color: white;
+}
+
+.inner-heading-below.activated {
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+	font-size: inherit; 
+}
+
+
+/********** Opttimisations for smaller screens **********/
+@media all and (max-width: 720px) {
+	h1 {
+		font-size: smaller;
+	}
+	.inner-heading-below {
+		font-size: inherit;
+		animation: none;
+		-webkit-animation: none;
+	}
+
+	.inner-heading-below.activated {
+		-webkit-animation: none;
+		animation: none;
+	}
+
+	.below-font-color {
+		color: gray;
+	}
+
+	.dot {
+		background-color: white;
+	}
+}

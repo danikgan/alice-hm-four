@@ -1,0 +1,184 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-height: 100vh;
+  grid-gap: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow: hidden;
+}
+
+.buttons {
+  width: 12pt;
+  height: 12pt;
+  border-radius: 50%;
+  left: 0em;
+  position: absolute;
+}
+
+.button1 {
+  background-color: #da7474;
+  /*border: 0.1em solid rgb(131, 48, 48);
+    mix-blend-mode: hard-light;*/
+  margin-top: 150pt;
+}
+
+.button2 {
+  background-color: #ebb9b9;
+  /*mix-blend-mode: hard-light;
+  border: 0.1em solid rgb(131, 48, 48);*/
+  margin-top: 250pt;
+}
+
+.buttons:hover {
+  left: 0em;
+  width: 100pt;
+  height: 100pt;
+  margin-left: -50pt;
+}
+
+.button1:hover {
+  margin-top: 100pt;
+}
+
+.button2:hover {
+  margin-top: 200pt;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: red;
+  background-color: rgba(255, 255, 75, 0.5);
+  font-size: larger;
+  font-weight: bolder;
+}
+
+p {
+  text-align: justify;
+  margin-top: 0vw;
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -500vh;
+  }
+}
+
+.main {
+  grid-column-start: 1;
+  animation: float 100s infinite normal ease-out;
+}
+.main:hover {
+  animation: none;
+}
+
+.main2 {
+  grid-column-start: 2;
+  animation: float 10s infinite normal ease-out;
+}
+.main2:hover {
+  animation: none;
+}
+
+.main3 {
+  grid-column-start: 3;
+  animation: float 20s infinite normal ease-out;
+}
+.main3:hover {
+  animation: none;
+}
+
+.main4 {
+  grid-column-start: 4;
+  animation: float 50s infinite normal ease-out;
+}
+.main4:hover {
+  animation: none;
+}
+
+.main5 {
+  grid-column-start: 5;
+  animation: float 15s infinite normal ease-out;
+}
+.main5:hover {
+  animation: none;
+}
+
+@media all and (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main3, .main4, .main5{
+    display: none;
+  }
+
+  .main {
+    animation: none;
+  }
+  
+  a {
+    color: red;
+  }
+
+  a:hover {
+    color: red;
+    background-color: white;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .buttons {
+    width: 50pt;
+    height: 50pt;
+    border-radius: 50%;
+    bottom: 10px;
+    position: absolute;
+    left: auto;
+    z-index: 5;
+    opacity: .75;
+  }
+
+  .button1 {
+    background-color: #da7474;
+    right: 15pt;
+  }
+  
+  .button2 {
+    background-color: #ebb9b9;
+    left: 15pt;
+  }
+
+  
+  .buttons:hover {
+    left: auto;
+    width: 50pt;
+    height: 50pt;
+    margin: 0;
+  }
+  
+  .button1:hover {
+    margin: 0;
+  }
+  
+  .button2:hover {
+    margin: 0;
+  }
+
+  .main2 {
+    grid-column-start: 2;
+    animation: float 10s infinite normal ease-out;
+  }
+  .main2:hover {
+    animation: float 10s infinite normal ease-out;
+  }
+}
