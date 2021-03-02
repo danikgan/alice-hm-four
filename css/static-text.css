@@ -5,7 +5,7 @@
   align-content: center;
   z-index: 2;
   padding-left: 1em;
-  max-height: 100vh;
+  max-height: fit-content;
   left: -4em;
 }
 
@@ -14,7 +14,7 @@
   height: 12pt;
   border-radius: 50%;
   left: 0em;
-  position: absolute;
+  position: fixed;
 }
 
 .button1 {
@@ -73,7 +73,6 @@ p {
     height: 50pt;
     border-radius: 50%;
     bottom: 10px;
-    position: absolute;
     left: auto;
     z-index: 5;
     opacity: .75;
